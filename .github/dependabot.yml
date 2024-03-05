@@ -1,0 +1,9 @@
+# Keep the GitHub action up-to-date
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    # The directory "/" defaults to the location of `.github/workflows` for workflow files
+    directory: "/"
+    schedule:
+      interval: "weekly"
