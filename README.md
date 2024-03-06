@@ -29,8 +29,9 @@ Create three repository secrets in the `Secrets` tab.
 Switch to the `Variables` tab and create three repository variables.
 
 - `ROOT_PATH`: Enter the desired path to the photo directory in your filen.io drive
-- `DIR_PATTERN`: Enter a date-time pattern for the directory names to sort the photos into. [Format][date-format-link]. If empty, no directories will be created. If omitted, defaults to `YYYY-MM`, which places photos taken in the March 2024 into the sub-directory `2024-03`
-- `FILE_PATTERN`: Enter a date-time pattern for renaming the files based on date-taken. If empty, files will not be renamed. If omitted, defaults to `YYYY-MM-DD_HH.mm.ss`, which renames a JPG photo taken on March 4th, 2024 at 21:15:12 to `2024-03-4_21.15.12.jpg`
+- `DIR_PATTERN`: Enter a date-time pattern for the directory names to sort the photos into. [Format][date-format-link]. If empty, no directories will be created. If omitted, defaults to `yyyy-MM`, which places photos taken in the March 2024 into the sub-directory `2024-03`
+- `FILE_PATTERN`: Enter a date-time pattern for renaming the files based on date-taken. If empty, files will not be renamed. If omitted, defaults to `yyyy-MM-dd_HH.mm.ss`, which renames a JPG photo taken on March 4th, 2024 at 21:15:12 to `2024-03-4_21.15.12.jpg`
+- `FALLBACK_TIME_ZONE`: Enter your local time zone as[TZ/IANA identifier][timezones-link], e.g. `Europe/Berlin`. This time zone will be used when no GPS metadata is found, to determine the local time a photo was taken. If omitted, defaults to `Europe/Berlin`.
 
 ### 4. Enjoy
 
@@ -41,3 +42,10 @@ You can inspect the organization operations in the Actions tab in your repositor
 ## GitHub Action
 
 For more information, visit the repository of the GitHub Action [szapp/filen-photo-organizer](https://github.com/szapp/filen-photo-organizer).
+
+## Note for changing from V1 to V2
+
+With the introduction of time-zone-aware time stamps, there are breaking changes in V2. Please update the time formats in `DIR_PATTERN` and `FILE_PATTERN` (if used) based on different [date formatting][date-format-link]. Additionally, a new GitHub variable was added to specify the user default time zone, see above.
+
+[date-format-link]: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
+[timezones-link]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
