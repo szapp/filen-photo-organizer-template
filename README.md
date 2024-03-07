@@ -39,13 +39,13 @@ Once the variables and secrets are properly configured, the photo directory will
 
 You can inspect the organization operations in the Actions tab in your repository in the section `Workflows` -> `Organize photos`.
 
-## GitHub Action
-
-For more information, visit the repository of the GitHub Action [szapp/filen-photo-organizer](https://github.com/szapp/filen-photo-organizer).
-
 ## Note for changing from V1 to V2
 
 With the introduction of time-zone-aware time stamps, there are breaking changes in V2. Please update the time formats in `DIR_PATTERN` and `FILE_PATTERN` (if used) based on different [date formatting][date-format-link]. Additionally, a new GitHub variable was added to specify the user default time zone, see above.
 
 [date-format-link]: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
 [timezones-link]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+## GitHub Action
+
+For more information, visit the repository of the GitHub Action [szapp/filen-photo-organizer](https://github.com/szapp/filen-photo-organizer).
