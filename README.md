@@ -2,6 +2,8 @@
 
 Automatically organize photo and camera uploads on your [Filen.io](https://filen.io) drive.
 
+Source template: [szapp/filen-photo-organizer-template](https://github.com/szapp/filen-photo-organizer-template)
+
 ## Create your own
 
 [![Use me](https://img.shields.io/badge/template-use%20me-green?style=for-the-badge&logo=github)](https://repo.new/?template_name=filen-photo-organizer-template&template_owner=szapp&name=filen-photo-organizer&description=Automatically%20organizes%20my%20filen.io%20photos)
@@ -31,13 +33,13 @@ Switch to the `Variables` tab and create three repository variables.
 - `ROOT_PATH`: Enter the desired path to the photo directory in your filen.io drive
 - `DIR_PATTERN`: Enter a date-time pattern for the directory names to sort the photos into. [Format][date-format-link]. If empty, no directories will be created. If omitted, defaults to `yyyy-MM`, which places photos taken in the March 2024 into the sub-directory `2024-03`
 - `FILE_PATTERN`: Enter a date-time pattern for renaming the files based on date-taken. If empty, files will not be renamed. If omitted, defaults to `yyyy-MM-dd_HH.mm.ss`, which renames a JPG photo taken on March 4th, 2024 at 21:15:12 to `2024-03-4_21.15.12.jpg`
-- `FALLBACK_TIME_ZONE`: Enter your local time zone as[TZ/IANA identifier][timezones-link], e.g. `Europe/Berlin`. This time zone will be used when no GPS metadata is found, to determine the local time a photo was taken. If omitted, defaults to `Europe/Berlin`.
+- `FALLBACK_TIME_ZONE`: Enter your local time zone as [TZ/IANA identifier][timezones-link], e.g. `Europe/Berlin`. This time zone will be used when no GPS metadata is found, to determine the local time a photo was taken. If omitted, defaults to `Europe/Berlin`.
 
 ### 4. Enjoy
 
-Once the variables and secrets are properly configured, the photo directory will be organized periodically at intervals of 10 minutes between 6:00 and 22:00 UTC. You can adjust the schedule in the file `.github/workflows/organize.yml`.
+Once the variables and secrets are properly configured, the photo directory will be organized periodically at intervals of 10 minutes between 5:00 and 22:00 UTC daily. This time range coincides well with day time in Central and Western European countries. If you live outside of Europe, you might want to update these values. You can adjust the schedule in the file `.github/workflows/organize.yml`.
 
-You can inspect the organization operations in the Actions tab in your repository in the section `Workflows` -> `Organize photos`.
+You can inspect the organization operations in the `Actions` tab in your repository in the section `Workflows` -> `Organize photos`.
 
 ## Note for changing from V1 to V2
 
