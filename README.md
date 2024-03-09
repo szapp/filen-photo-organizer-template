@@ -2,7 +2,8 @@
 
 Automatically organize photo and camera uploads on your [Filen.io](https://filen.io) drive.
 
-Source template: [szapp/filen-photo-organizer-template](https://github.com/szapp/filen-photo-organizer-template)
+Source template: [szapp/filen-photo-organizer-template](https://github.com/szapp/filen-photo-organizer-template)  
+Based on Github Action: [szapp/filen-photo-organizer](https://github.com/szapp/filen-photo-organizer)
 
 ## Create your own
 
@@ -37,7 +38,12 @@ Switch to the `Variables` tab and create three repository variables.
 
 ### 4. Enjoy
 
-Once the variables and secrets are properly configured, the photo directory will be organized periodically at intervals of 10 minutes between 5:00 and 22:00 UTC daily. This time range coincides well with day time in Central and Western European countries. If you live outside of Europe, you might want to update these values. You can adjust the schedule in the file `.github/workflows/organize.yml`.
+Once the variables and secrets are properly configured, the photo directory will be organized periodically.
+
+The Github workflow runs in intervals of every second hour between 5:00 and 22:00 UTC daily. This time range coincides well with day time in Central and Western European countries. If you live outside of Europe, you might want to update these values. You can adjust the schedule in the file `.github/workflows/organize.yml`.
+
+The most frequent a scheduled GitHub workflow can run is every 5 minutes. However, with the monthly 2.000 computing minutes quota for free GitHub accounts
+and an estimated average run time of this workflow of 5 minutes at generous photographing, the proposed schedule here of every second hour during day time or less is highly recommended.
 
 You can inspect the organization operations in the `Actions` tab in your repository in the section `Workflows` -> `Organize photos`.
 
