@@ -51,9 +51,13 @@ You can inspect the organization operations in the `Actions` tab in your reposit
 
 With the introduction of time-zone-aware time stamps, there are breaking changes in V2. Please update the time formats in `DIR_PATTERN` and `FILE_PATTERN` (if used) based on different [date formatting][date-format-link]. Additionally, a new GitHub variable was added to specify the user default time zone, see above.
 
-[date-format-link]: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
-[timezones-link]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+## Note for changing from V2 to V3
+
+When updating from V2 to V3, update `twoFactorCode` into `twoFactorSecret` in the workflow file.
 
 ## GitHub Action
 
 For more information, visit the repository of the GitHub Action [szapp/filen-photo-organizer](https://github.com/szapp/filen-photo-organizer).
+
+[date-format-link]: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
+[timezones-link]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
