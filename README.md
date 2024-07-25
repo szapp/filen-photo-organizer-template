@@ -32,8 +32,8 @@ Create three repository secrets in the `Secrets` tab.
 Switch to the `Variables` tab and create three repository variables.
 
 - `ROOT_PATH`: Enter the desired path to the photo directory in your filen.io drive
-- `DIR_PATTERN`: Enter a date-time pattern for the directory names to sort the photos into. [Format][date-format-link]. If empty, no directories will be created. If omitted, defaults to `yyyy-MM`, which places photos taken in the March 2024 into the sub-directory `2024-03`
-- `FILE_PATTERN`: Enter a date-time pattern for renaming the files based on date-taken. If empty, files will not be renamed. If omitted, defaults to `yyyy-MM-dd_HH.mm.ss`, which renames a JPG photo taken on March 4th, 2024 at 21:15:12 to `2024-03-4_21.15.12.jpg`
+- `DIR_PATTERN`: Enter a date-time pattern for the directory names to sort the photos into. If empty, no directories will be created and `FILE_PATTERN` must not be empty. [Format][date-format-link], e.g. `yyyy-MM` places photos taken in the March 2024 into the sub-directory `2024-03`
+- `FILE_PATTERN`: Enter a date-time pattern for renaming the files based on date-taken. If empty, files will not be renamed and `DIR_PATTERN` must not be empty. E.g. `yyyy-MM-dd_HH.mm.ss` renames a JPG photo taken on March 4th, 2024 at 21:15:12 to `2024-03-4_21.15.12.jpg`
 - `FALLBACK_TIME_ZONE`: Enter your local time zone as [TZ/IANA identifier][timezones-link], e.g. `Europe/Berlin`. This time zone will be used when no GPS metadata is found, to determine the local time a photo was taken. If omitted, defaults to `Europe/Berlin`.
 
 ### 4. Enjoy
